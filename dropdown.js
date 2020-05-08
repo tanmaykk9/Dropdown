@@ -1,5 +1,25 @@
 <script>
   
+   (function (jQuery, window, undefined) {
+        $(function () {
+            //DOM CACHE
+            var DOM = {
+                $window: $(window),
+                $document: $(document),
+                $countryNameString: "",
+                $countryDataSource: [],
+                $drpCountries: $("#countries"),
+                $btnSave: $("#btnSave"),
+                $countryDropDownWrapper: $("#countryDropDownWrapper"),
+                $notAvailable: $.parseHTML('@Resource.Country_NotAvailable')[0].data,
+                $pleaseSelect: $.parseHTML('@Resource.Country_PleaseSelect')[0].data,
+                $countryValidationMsg: $.parseHTML('@Resource.Validation_CountrySelect')[0].data,
+                $viewBagQueryStringEmail: "@ViewBag.QueryStringEmail",
+                $viewBagQueryStringToken: "@ViewBag.QueryStringToken"
+            };
+        });
+})();
+  
   getAllCountriesDataSource: function () {
                     $.ajax({
                         url: '/controller path',
